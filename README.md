@@ -3,7 +3,7 @@ Create your Pure JS+HTML mobile friendly map with a clickable list based on Leaf
 
 <img src="https://repository-images.githubusercontent.com/272474353/49d5d000-af38-11ea-8292-8cdd0be8ccfe" alt='' titile=''>
 
-One of the my old projects. If there is activity, then I will update if and do refactoring. Thank!
+One of the old, but useful projects. I will update and add functionality if there is activity. Thank you!
 
 # How to start
 
