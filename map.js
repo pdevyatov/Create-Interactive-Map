@@ -29,12 +29,12 @@ var LeafIcon = L.Icon.extend({
     }
 });
 var defaultIcon = new LeafIcon({
-    iconUrl: '/img/marker.svg',
+    iconUrl: './img/marker.svg',
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 
 // Orange Marker Style
 var orangeIcon = new LeafIcon({
-    iconUrl: '/img/marker2.svg',
+    iconUrl: './img/marker2.svg',
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })

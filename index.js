@@ -45,13 +45,13 @@ function showPlaces() {
 
         newDiv.innerHTML = `
         <div class="listLeft">
-        ${markers.objects[i].new ? '<div class="newDot" title="Новинка!"></div>' : ''} <b>${markers.objects[i].name}</b> ${markers.objects[i].percent}
+        ${markers.objects[i].new ? '<div class="newDot" title="New!"></div>' : ''} <b>${markers.objects[i].name}</b> ${markers.objects[i].percent}
             <div class="elHidden" style="display: none">${markers.objects[i].synonyms}</div>
         </div>
         <div class="listLeft-2">
         ${markers.objects[i].adress}
         </div>
-        <div class="arrow"><img src="/img/arrow-point-to-right.svg" height="15" width="15"/></div>
+        <div class="arrow"><img src="./img/arrow-point-to-right.svg" height="15" width="15"/></div>
         `;
     }
 }
