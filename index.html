@@ -1,0 +1,120 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo Employee Discount Program</title>
+    <meta name="description" content="Pure JS. Based on Leaflet">
+    <meta name="robots" content="noindex, nofollow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="icon" href="./img/32x32.png" sizes="32x32" />
+    <link rel="icon" href="./img/192x192.png" sizes="192x192" />
+
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+    <script src="./partners/objects.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="left">
+
+        <div class="leftTop">
+
+            <div class="divider1"></div>
+
+            <div class="logo" onclick="location.href = '/'">
+                <div class="logoLeft"><img src="/img/logo.png" height="50" /></div>
+                <div class="logoRight">Employee Discount<br /> Program Demo</div>
+            </div>
+
+            <div class="divider1"></div>
+
+            <div class="tags">
+                <div id="tags-0" class="tags-el tags-el-active"
+                    onclick="document.getElementById('search').value = '';sortPlaces('')">Все</div>
+                <div class="tags-el" onclick="sortAndSelect(this)">Cafe</div>
+                <div class="tags-el" onclick="sortAndSelect(this)">Restaraunt</div>
+                <div class="tags-el" onclick="sortAndSelect(this)">Sport</div>
+                <div class="tags-el" onclick="sortAndSelect(this)">Health</div>
+                <div class="tags-el" id="tags-plus" onclick="littleModal()"><b>+</b></div>
+                <div class="tags-el tags-el-hidden" onclick="sortAndSelect(this)">Flowers</div>
+                <div class="tags-el tags-el-hidden" onclick="sortAndSelect(this)">Hotel</div>
+                <div class="tags-el tags-el-hidden" onclick="sortAndSelect(this)">Beauty</div>
+            </div>
+
+            <div class="search-el">
+                <input type="search" class="search" id="search"
+                    oninput="this.value = this.value.toLowerCase(); sortPlaces(this.value)"
+                    placeholder="Type to search" />
+            </div>
+
+        </div>
+
+        <div class="leftCenter" id="leftCenter">
+            <div id="places" class="places"></div>
+            <div id="clearSearch" class="clearSearch"
+                onclick="document.getElementById('search').value = '';sortPlaces('')">Clear search (show all)
+            </div>
+        </div>
+
+        <div class="leftBottom">
+            <div class="leftBottomLeft">
+                <div class="leftBottomBtn">
+                    <div class="leftBottomBtn-0" onclick="showWindow(true)">How to get a discount</div>
+                </div>
+            </div>
+            <div class="leftBottomRight">
+                <div class="leftBottomBtn">
+                    <div class="leftBottomBtn-0" onclick="whereIAm();">Where I am</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="map"></div>
+        <div class="mapChange">
+            <div onclick="mapChange('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 'OpenStreetMap contributors, Leaflet')"
+                class="mapIcon"><img src="img/1.png" width="50px"></div>
+            <div onclick="mapChange('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community, Leaflet')"
+                class="mapIcon"><img src="img/2.png" width="50px"></div>
+            <!-- <div onclick="mapChange('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png')" class="mapIcon"><img src="img/4.png" width="50px"></div> -->
+        </div>
+        <div id="copyright" class="copyright"></div>
+    </div>
+
+    <div id="showWindow"></div>
+
+    <div class="mobileMenu noDesktop" id="mobileMenu"
+        onclick="document.getElementsByClassName('left')[0].classList.toggle('noMobile')">
+        <div class="burger"></div>
+        <div class="burger"></div>
+        <div class="burger-3"></div>
+    </div>
+
+    <script src="map.js"></script>
+    <script>
+        mapChange('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            '<a href="https://www.openstreetmap.org/copyright" rel="nofollow">OpenStreetMap</a> contributors, Leaflet'
+        )
+    </script>
+
+    <script src="index.js"></script>
+
+    <script>
+        showPlaces()
+        addEventsToPlaces()
+    </script>
+
+</body>
+
+</html>

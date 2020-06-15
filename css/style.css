@@ -1,0 +1,508 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500);
+
+html {
+    color: rgb(35, 41, 48);
+    font-family: 'Fira Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#map {
+    height: 100%;
+}
+
+#places {}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+.left {
+    float: left;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0px 0px 50px rgba(1, 15, 32, 0.4);
+    overflow: hidden;
+}
+
+.right {
+    float: right;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.logo {
+    overflow: hidden;
+    height: 50px;
+    cursor: pointer;
+}
+
+.logoLeft {
+    float: left;
+    width: 35%;
+    text-align: center;
+}
+
+.logoRight {
+    float: left;
+    font-size: 16px;
+    width: 65%;
+    text-align: left;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: white;
+    color: #333;
+    box-shadow: 10px 30px 30px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 1px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    line-height: 1.4;
+}
+
+.mapChange {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 400;
+}
+
+.mapIcon {
+    display: inline-block;
+    transition: all 100ms;
+}
+
+.mapIcon img {
+    border: 3px solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mapIcon:hover {
+    transform: translateY(-3px)
+}
+
+.el {
+    margin: 0px;
+    padding: 15px;
+    overflow: hidden;
+    border-top: 1px solid #efefef;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    bottom: 0;
+    color: #aaa;
+    opacity: 0.1;
+    transition: all 0.5s;
+}
+
+.elSelected {
+    background: #efefef;
+}
+
+.el:hover .arrow {
+    opacity: 1;
+}
+
+.listLeft {
+    font-weight: 400;
+}
+
+.listLeft-2 {
+    color: #777;
+    font-weight: 400;
+    font-size: 13px;
+    padding-top: 4px;
+}
+
+.divider1 {
+    height: 20px;
+}
+
+
+
+.leaflet-popup-content {
+    overflow: hidden;
+}
+
+.leaflet-popup-content img {
+    border-radius: 5px;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.leaflet-container {
+    color: rgb(35, 41, 48);
+    font-family: 'Fira Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.leaflet-control-attribution {
+    display: none;
+}
+
+.copyright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 400;
+    opacity: 0.7;
+    font-size: 11px;
+    background: #fff;
+    padding: 2px;
+}
+
+.bubble-1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bubble-2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0px 0px 0px 0px;
+}
+
+.bubble-adress {
+    font-size: 14px;
+    margin: 0px 0px 15px 0px;
+    color: #777;
+}
+
+.bubble-3 {
+    font-size: 14px;
+}
+
+.bubble-link {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.littleWindow {
+    position: absolute;
+    right: 10px;
+    background: #fff;
+    width: 200px;
+    height: 80px;
+    box-shadow: 0px 3px 10px rgba(1, 15, 32, 0.2);
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+.leftTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+
+.leftCenter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 180px;
+    bottom: 50px;
+    overflow-y: auto;
+    transition: all 300ms;
+}
+
+.leftBottom {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    padding: 5px 0px 5px 10px;
+    background: #fff;
+}
+
+
+.leftBottomLeft {
+    float: left;
+    width: 60%;
+}
+
+
+.leftBottomRight {
+    float: left;
+    width: 40%;
+}
+
+.leftBottomBtn {
+    width: 100%;
+    text-align: center;
+}
+
+.leftBottomBtn-0 {
+    margin-right: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 100ms;
+}
+
+.leftBottomBtn-0:hover {
+    transform: translateY(-3px);
+}
+
+.places {}
+
+.tags {
+    font-size: 13px;
+    margin: 5px 0px 0px 10px;
+    max-width: 450px;
+}
+
+.tags-el {
+    display: inline-block;
+    line-height: 25px;
+    padding: 0px 5px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.tags-el:hover {
+    background: #eee;
+    border-radius: 5px;
+}
+
+.tags-el-active {
+    background: #eee;
+    border-radius: 5px;
+}
+
+.tags-el-hidden {
+    display: none;
+}
+
+.search-el {
+    padding: 5px 10px;
+}
+
+.search {
+    overflow: hidden;
+    background: #fff;
+    padding: 10px 10px 10px 35px;
+    border: 0px solid #fff;
+    width: 100%;
+    color: #000;
+    font-family: 'Fira Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-shadow: 0px 3px 10px rgba(1, 15, 32, 0.2);
+    border-radius: 5px;
+    background: 10px 10px / 15px 15px no-repeat url("/img/magnifying-glass.svg");
+
+}
+
+.clearSearch {
+    background: #fff;
+    border-radius: 5px;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    margin: 10px 10px;
+    border: 1px solid #ddd;
+    display: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #777;
+}
+
+.mobileMenu {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 10px 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.burger {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 0px 0px 4px 0px;
+}
+
+.burger-3 {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 0px 0px 4px 0px;
+}
+
+.showWindow {}
+
+.showWindow-0 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 100;
+    cursor: pointer;
+
+}
+
+.showWindow-1 {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    z-index: 101;
+    background: #fff;
+    overflow: auto;
+    max-height: 100%;
+}
+
+.showWindow-1-0 {
+    padding: 20px 20px 30px 20px;
+}
+
+.showWindowClose {
+    z-index: 102;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    background: #1e77ff;
+    font-size: 25px;
+    line-height: 25px;
+    transition: all 0.5s;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.showWindowClose:hover {
+    background: #1e77ff;
+    transform: scale(1.2);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 0px;
+    background: #1e77ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 100ms;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.noDesktop {
+    display: none;
+}
+
+.displayNone {
+    display: none;
+}
+
+.newDot {
+    background: tomato;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+    transform: translateY(-1px)
+}
+
+/* Mobile friendly */
+
+@media screen and (max-width: 1500px) {
+    .left {
+        width: 25%;
+    }
+
+    .right {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .left {
+        width: 30%;
+    }
+
+    .right {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .left {
+        width: 40%;
+    }
+
+    .right {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .left {
+        width: 95%;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .noMobile {
+        display: none;
+    }
+
+    .noDesktop {
+        display: block;
+    }
+}
