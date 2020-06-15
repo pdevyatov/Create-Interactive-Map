@@ -11,5 +11,7 @@ Use as a template and change the values to the ones you need
 
 1. You can add any objects in ./partners/objects.js. This is a regular javascript object 
 2. You can add any categories in index.html
-3. Keep in mind that categories and search use names and synonyms of object
+3. Keep in mind that categories and search use "name" and "synonyms" of object
 4. Also you can link to any of your object with /#id, for example: /#1
+
+Live Demo will be later.
